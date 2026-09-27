@@ -1,0 +1,10 @@
+**/.git/
+**/.bsp/
+**/.metals/
+**/.cache/
+**/build/
+**/target/
+**/node_modules/
+**/__pycache__/
+
+**/obj_dir/

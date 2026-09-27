@@ -1,0 +1,490 @@
+<html>
+
+<head>
+<title>Verification of Digital Systems, Spring 2021</title>
+<body background="pictures/2.gif">
+<p>
+<h3>
+<font color=orange>
+The University of Texas at Austin <br>
+Department of Electrical and Computer Engineering<br>
+</h3>
+</font>
+<p>
+<h3>
+<font color=red>
+EE 382M-11, Verification of Digital Systems, Spring 2021 (Unique numbers
+17650-17660)
+</font>
+</h3>
+<p>
+Class meets, Thursdays, 6:30 - 9:30 pm, virtually on zoom (see Canvas for links)
+<p>
+<font color=red>
+<b> INSTRUCTOR:</b> <BR> 
+<p>
+</font>
+Monica Farkash<BR>
+<b> Office hours:</b> Fridays 4:00 - 6:00 pm, or by appointment<br>
+<b> E-mail:</b>
+<script language=javascript>
+<!--
+// SpamProof Mail Script 1.0 by Joseph McLean <flux@thecentre.com> - freeware
+// Linktext is the text you want folks to see and click upon.
+// email1 & email2 are the text on either side of your email address's @ sign.
+var linktext = "<i>monica.farkash <u>at</u> utexas.edu";
+var email1 = "monica.farkash";
+var email2 = "utexas.edu"; 
+document.write("<a href=" + "mail" + "to:" + email1 + "@" + email2 + ">" +
+linktext + "</a>")
+//-->
+</script>
+</i>
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<!--<a href="http://www.cerc.utexas.edu/~shahrzad"><font color=red>-->
+<b> Teaching Assistant:
+<p>
+Madhumitha Ramachandran</b><br>
+<b> Office hours:</b> Wednesday 4:00 - 6:00<br>
+<b> E-mail:</b>
+<script language=javascript>
+<!--
+// SpamProof Mail Script 1.0 by Joseph McLean <flux@thecentre.com> - freeware
+// Linktext is the text you want folks to see and click upon.
+// email1 & email2 are the text on either side of your email address's @ sign.
+var linktext = "<i>madhurama27<u> at</u> utexas.edu";
+var email1 = "madhurama27";
+var email2 = "utexas.edu"; 
+document.write("<a href=" + "mail" + "to:" + email1 + "@" + email2 + ">" +
+linktext + "</a>")
+//-->
+</script>
+</i>
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<font color=red>
+<b>PREREQUISITES:</b>
+</font>
+<p>VLSI Design, some object-oriented programming experience, computer
+  architecture.
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<p>
+<font color=red>
+<b>OUTLINE:</b><br>
+</font>
+<p>
+This course will cover the basics of verifying digital systems, from theory to
+industry practice.  Laboratory exercises will deal with applications of the
+ideas in the lectures, and these will be based on verification tools currently
+used in industry.
+<p>
+The lectures will discuss the basics of verification, starting with logic, and
+include function representations based on binary decision diagrams, as well as
+satisfiability techniques.  This will be followed by a comprehensive overview
+of assertion-based verification.  Key topics then covered include formal
+methods of checking the equivalence of two designs, new directions in checking
+the equivalence of combinational and sequential designs, and fundamentals of
+temporal logic.
+<p>
+The fundamental concepts will be supplemented by examples of industry practice.
+These will include verification flows in industry, verification testbenches,
+Universal Verification Methodology (UVM), verifying memories, cache coherency,
+and semi-formal verification.
+<p>
+The class will also study model checking and its applications to property
+checking of real designs.  Techniques for managing the complexity of
+verification using compositional techniques and abstractions, as well as novel
+techniques to expose subtle bugs will also be
+studied.  The ideas will be applied to the verification of pipelined
+processors.  New directions in verification will also be discussed.
+<p>
+Homework problems and laboratory exercises using commercial tools will be
+assigned to reinforce the concepts discussed in class.  There will be one
+midterm exam (take-home with a time limit) on March 25.  A semester-long
+team project, dealing with some aspect of verification, will be required
+in the class.  Teams will present the results of their project to the
+entire class.
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<font color=red>
+<b>LABORATORY EXERCISES:</b>
+</font>
+<p>
+<b>Lab 1 - Logic Equivalence Checking (LEC)</b>
+<p>
+LEC is an important part of the front end design verification flow, because
+synthesis often optimizes the design to meet constraints, and there may be
+manual changes to the synthesized logic for testability, power and performance.
+These processes may change the logic inadvertently.  The goal of this lab will
+be to check the logical equivalence between a RTL module and its synthesized
+version, and remove any logic bugs.  <i>Conformal LEC</i> from Cadence will be
+used for this lab.
+<p>
+<b>Lab 2 - Assertion Based Verification (ABV)</b>
+<p>
+Assertion based verification is a methodology in which designers use
+assertions to capture specific design intent and, either through simulation,
+formal verification, or emulation of these assertions, verify that the design
+correctly implements that intent. In this lab, assertions must be added to a
+testbench to check for the correct operation of a protocol during simulation
+of the design. Mentor <i>Questa</i> will be the simulator used for this
+purpose.
+<p>
+<b>Lab 3 - Universal Verification Methodology (UVM)</b>
+<p>
+Universal Verification Methodology (UVM) is a powerful standardized
+verification methodology that was architected to be able to verify a wide
+range of design sizes and design types. In this lab, a UVM testbench will be
+set up in SystemVerilog for the given design under test (DUT). Using
+constrained random verification, the design will be tested for functional
+bugs. Mentor <i>Questa</i> will again be used for this lab.
+<p>
+<b>Lab 4 - Formal Verification</b>
+<p>
+This lab is designed to use a formal verification tool, <i>JasperGold</i> from
+Cadence, to check specified properties for all possible states
+of the design.  An important takeaway from this lab is the ease with which
+properties could cause the tool to give vacuous results, take a very long time
+to complete the analysis, or time out, unless the specified properties are
+representative of the real design intent.  Some recent advances in exposing
+subtle bugs in a complex design will also be studied.
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<font color=red>
+<b>PROJECT:</b>
+</font>
+<p>
+Independent study of some aspect of verification, taking into account
+existing shortcomings of verification technology.  Evaluate relevant
+publications and propose solutions to the problems addressed, or undertake a
+case study verifying a complex design.
+<p>
+Identify project teams, topic of project: February 18
+<p>
+One-page outline of project, deliverables: March 12
+<p>
+Project presentations in class: May 6
+<p>
+Final project report due: May 14
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<h4>Course Outline (tentative)</h4>
+<table border = "1">
+
+<tr>
+  <td><b>Date</b></td>
+  <td><b>Topic</b></td>
+  <td><b>Instructor</b></td>
+  <td><b>Labs</b></td>
+  <td><b>HW</b></td>
+</tr>
+
+<tr>
+  <td>Jan. 21</td>
+  <td><a href="lectures.php?lecture=1">1. Introduction to hardware verification</a></td>
+  <td>Jay Bhadra, AMD</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=2">2. Industry verification flows</a></td>
+  <td>Vivek Vedula, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Jan. 28</td>
+  <td><a href="lectures.php?lecture=3">3. Formal equivalence checking</a>
+  <td>Shaun Feng, Samsung</td>
+  <td>Lab. 1 assigned</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=4">4. Verifying clock domain crossings</a></td>
+  <td>Hary Mony, RealIntent</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Feb. 4</td>
+  <td><a href="lectures.php?lecture=5">5. Assertion Based Verification </a></td>
+  <td>Harry Foster, Siemens</td>
+  <td>Lab. 1 due</td>
+  <td>HW 1 assigned</td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=6">6. System Verilog assertions</a></td>
+  <td>Harry Foster, Siemens</td>
+  <td>Lab. 2 assigned</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Feb. 11</td>
+  <td><a href="lectures.php?lecture=7">7. Symbolic Trajectory evaluation,
+  term rewriting</a> </td>
+  <td>Shaun Feng, Samsung</td>
+  <td></td>
+  <td>HW 1 due</td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=8">8. Machine Learning and AI in
+  verification</a></td> 
+  <td>Monica Farkash, AMD</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Feb. 25</td>
+  <td><a href="lectures.php?lecture=9">9. Verification testbenches</a></td>
+  <td>Eric Harris, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=10">10. UVM Basics</a></td>
+  <td>Sakar Jain, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Mar. 4</td>
+  <td><a href="lectures.php?lecture=11">11. Finite Automata and Temporal Logic</a></td>
+  <td>Shobha Vasudevan, UIUC</td>
+  <td>Lab. 2 due</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=12">12. Model Checking</a></td>
+  <td>Amit Goel, Apple</td>
+  <td>Lab. 3 assigned</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Mar. 12</td>
+  <td><a href="lectures.php?lecture=13">13. Analog/Mixed-Signal Verification</a></td>
+  <td>Mike Warner</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=14">14. Use of ATPG algorithms,
+  programmable hardware <a></td>
+  <td>Vivek Vedula, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Mar. 25</td>
+  <td><a href="lectures.php?lecture=15">15. Semi-formal verification</td>
+  <td>Hary Mony, RealIntent</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=16">16. Sequential equivalence
+  checking</a></td>
+  <td>Shaun Feng, Samsung</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Apr. 1</td>
+  <td><a href="lectures.php?lecture=17">17. GPU verification challenges</a></td>
+  <td>Zihno Jusufovic, Apple</td>
+  <td>Lab. 3 due</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=18">18. QED, Symbolic QED</a></td>
+  <td>Sandip Ray, Univ of FL</td>
+  <td>Lab. 4 assigned</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Apr. 8</td>
+  <td><a href="lectures.php?lecture=19">19. Verification Efficiency</a></td>
+  <td>Mark Conklin, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td>Midterm Exam</td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Apr. 15</td>
+  <td><a href="lectures.php?lecture=20">20. CPU verification challenges</a></td>
+  <td>Anshul Bhargava, Apple</td>
+  <td>Lab. 4 due</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+ <td><a href="lectures.php?lecture=21">21. SoC verification</a></td>
+  <td>Harry Foster, Siemens</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Apr. 22</td>
+  <td><a href="lectures.php?lecture=22">22. Cache Verification; 
+ML/AI in Verif.</a></td>
+  <td>Monica Farkash, UT</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=23">23. Security and Safety; 
+Increase tool capacity</a></td>
+  <td>Vivek Vedula, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Apr. 29</td>
+  <td><a href="lectures.php?lecture=24">24. Am I ready to be a verification
+  engineer?</a></td>
+  <td>Ram Narayan, ARM</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td><a href="lectures.php?lecture=25">25. New directions in
+  verification</a></td>
+  <td>Sean Sun, NXP</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>May 6</td>
+  <td>Project Presentations</td>
+  <td>Jay Bhadra, AMD</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td></td>
+  <td>Project Presentations</td>
+  <td>Jay Bhadra, AMD</td>
+  <td></td>
+  <td></td>
+</tr>
+
+</table>
+
+
+<img src="pictures/rainbow.gif">
+<p>
+<font color=red>
+<b>GRADES:</b>
+</font>
+<p>
+<pre>
+Homework                      10%
+Midterm Exam                  10%
+Laboratory Exercises 1        10%
+Laboratory Exercises 2, 3 & 4 15% (each)
+Project                       25%
+</pre>
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+Allegations of Scholastic Dishonesty will be dealt with according to the
+<a href="http://catalog.utexas.edu/general-information/appendices/appendix-c/student-discipline-and-conduct/"> UT
+Honor Code</a>.  Although we encourage you to study together, your designs and
+examinations you take MUST be your own work.  Providing information to another
+student where prohibited, or obtaining information from another student where
+prohibited is considered cheating.  This includes the exchange of any
+information during an examination and any part of your design for the
+laboratory exercises.  Allowing another student to read something on your
+paper during an examination is considered cheating.  In fact, leaving
+information unprotected so it can be compromised by another student is
+considered cheating.  This includes sheets of paper lying about in your dorm
+room, and computer files that are not properly protected.
+<p>
+The University of Texas at Austin provides, upon request, 
+appropriate academic adjustments for qualified students with disabilities. 
+who may request appropriate academic accommodations from the Division of
+Diversity and Community Engagement, Services for Students with Disabilities,
+471-6259, http://ddce.utexas.edu/disability/accommodations-and-services/
+<p>
+By UT Austin policy, you must notify me of your pending absence at least
+fourteen days prior to the date of observance of a religious holy day.  If you
+must miss a class, an examination, a work assignment, or a project in order to
+observe a religious holy day, you will be given an opportunity to complete the
+missed work within a reasonable time after the absence.
+<p>
+<img src="pictures/rainbow.gif">
+<p>
+<b>Classroom Evacuation for Students</b>
+<p>
+All occupants of university buildings are required to evacuate a building when
+a fire alarm and/ or an official announcement is made indicating a potentially
+dangerous situation within the building.
+<p>
+Familiarize yourself with all exit doors of each classroom and building you
+may occupy. Remember that the nearest exit door may not be the one you used
+when entering the building.
+<p>
+If you require assistance in evacuation, inform your instructor in writing
+during the first week of class.
+<p>
+For evacuation in your classroom or building:
+<ol>
+<li>Follow the instructions of faculty and teaching staff.
+<li>Exit in an orderly fashion and assemble outside.
+<li>Do not re-enter a building unless given instructions by emergency
+personnel.
+</ol>
+
+</body></html>
+

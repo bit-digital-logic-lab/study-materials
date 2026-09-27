@@ -1,0 +1,37 @@
+//| mill-version: 1.1.2
+package build
+
+import mill._
+import mill.scalalib._
+
+// Note: This project requires .mill-jvm-opts file containing:
+//   -Dchisel.project.root=${PWD}
+// This is needed because Chisel needs to know the project root directory
+// to properly generate and handle test directories and output files.
+// See: https://github.com/com-lihaoyi/mill/issues/3840
+
+object chisel4ysyx extends SbtModule {
+  def scalaVersion = "2.13.18"
+  def chiselVersion = "7.7.0"
+
+  def moduleDir = super.moduleDir / os.up
+
+  override def scalacOptions = Seq(
+    "-language:reflectiveCalls",
+    "-deprecation",
+    "-feature",
+    "-Xcheckinit",
+    "-Ymacro-annotations",
+  )
+  override def mvnDeps = Seq(
+    mvn"org.chipsalliance::chisel:$chiselVersion",
+  )
+  override def scalacPluginMvnDeps = Seq(
+    mvn"org.chipsalliance:::chisel-plugin:$chiselVersion",
+  )
+  object test extends SbtTests with TestModule.ScalaTest {
+    override def mvnDeps = Seq(
+      mvn"org.scalatest::scalatest::3.2.19"
+    )
+  }
+}
